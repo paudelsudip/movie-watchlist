@@ -64,12 +64,13 @@ function App() {
       <MovieForm addMovie={addMovie} editMovie={editMovie} />
 
       <div className="filter">
-        <select onChange={(e) => setFilter(e.target.value)}>
-          <option>All</option>
-          <option>Action</option>
-          <option>Comedy</option>
-          <option>Drama</option>
-          <option>Sci-Fi</option>
+        <label>Filter by Genre: </label>
+        <select value={filter} onChange={(e) => setFilter(e.target.value)}>
+          <option value="All">All</option>
+          <option value="Action">Action</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Drama">Drama</option>
+          <option value="Sci-Fi">Sci-Fi</option>
         </select>
       </div>
 
@@ -81,6 +82,9 @@ function App() {
         toggleStatus={toggleStatus}
         setEditMovie={setEditMovie}
       />
+      <footer>
+  Designed by Sudip | {new Date().getFullYear()}
+</footer>
     </div>
   );
 }
